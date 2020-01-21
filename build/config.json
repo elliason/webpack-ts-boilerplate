@@ -1,0 +1,7 @@
+{
+    "entry": {
+        "js": "./src/js/index.js",
+        "ts": "./src/ts/index.ts"
+    },
+    "outputPath": "dist"
+}

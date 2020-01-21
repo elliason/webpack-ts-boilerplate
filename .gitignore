@@ -1,0 +1,12 @@
+# Libraries
+node_modules
+vendor
+
+# IDE'S
+.idea
+
+# Artifacts
+dist
+
+# Environment specific
+.env

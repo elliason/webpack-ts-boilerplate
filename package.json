@@ -1,0 +1,44 @@
+{
+    "name": "react-app-boilerplate",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "mediafactory.cz",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "clean": "rimraf dist",
+        "dev": "webpack",
+        "watch": "webpack --watch",
+        "build": "yarn clean && webpack --env.mode production --optimize-minimize --define process.env.NODE_ENV=\"'production'\"",
+        "build:analyze": "webpack --env.mode production --env.presets analyze --optimize-minimize --define process.env.NODE_ENV=\"'production'\""
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.8.3",
+        "@babel/runtime-corejs3": "^7.8.3",
+        "core-js": "^3.6.4",
+        "dotenv": "^8.2.0",
+        "whatwg-fetch": "^3.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.8.3",
+        "@babel/core": "^7.8.3",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/plugin-transform-runtime": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "@babel/preset-react": "^7.8.3",
+        "@babel/register": "^7.8.3",
+        "babel-loader": "^8.0.6",
+        "eslint": "^6.8.0",
+        "eslint-loader": "^3.0.3",
+        "eslint-plugin-prettier": "^3.1.2",
+        "prettier": "^1.19.1",
+        "prettier-cli": "^0.1.0",
+        "rimraf": "^3.0.0",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.5",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10",
+        "webpack-manifest-plugin": "^2.2.0",
+        "webpack-merge": "^4.2.2"
+    }
+}
