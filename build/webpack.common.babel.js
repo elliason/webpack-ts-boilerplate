@@ -52,6 +52,9 @@ const commonWebpackSettings = rootDirectory => {
             path: path.resolve(rootDirectory, config.outputPath),
         },
         plugins,
+        resolve: {
+            extensions: ['.js', 'jsx', '.ts', '.tsx', '.json'],
+        },
         module: {
             rules: rules,
         },

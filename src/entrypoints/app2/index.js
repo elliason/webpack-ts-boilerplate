@@ -1,10 +1,8 @@
-const count = (a, b) => {
-    return a + b;
-};
+import count from '../../utils/count';
 
 const a = 2;
-const b = 2;
+const b = 4;
 
-const result = count(a, b);
+const result = count({ a, b });
 
-export { count, result };
+console.log('app 2', result);

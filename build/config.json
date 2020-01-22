@@ -1,7 +1,6 @@
 {
     "entry": {
-        "app1": "./src/entrypoints/app1/index.ts",
-        "app2": "./src/entrypoints/app2/index.js"
+        "app1": "./src/entrypoints/app1/index.ts"
     },
     "outputPath": "dist"
 }

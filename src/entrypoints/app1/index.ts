@@ -1,15 +1,9 @@
-interface ICount {
-    a: number;
-    b: number;
-}
+import count from '../../utils/count';
+import test from './test';
 
-const a: number = 2;
-const b: number = 4;
-
-const count = ({ a, b }: ICount): number => {
-    return a + b;
-};
+const a = 2;
+const b = 4;
 
 const result = count({ a, b });
 
-export { count, result };
+console.log('app 1', result, test());
