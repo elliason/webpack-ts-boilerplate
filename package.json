@@ -14,7 +14,7 @@
         "test": "jest --coverage",
         "test:watch": "jest --watch",
         "lint:js": "eslint --ext .js,.ts,.tsx,.jsx src",
-        "lint:style": "stylelint src/**/*.scss",
+        "lint:style": "stylelint --color src/**/*.scss",
         "format:js": "prettier --write src/**/*.{js,ts,jsx,tsx}",
         "format:style": "stylelint --fix src/**/*.scss"
     },
