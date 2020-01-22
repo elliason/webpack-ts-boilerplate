@@ -1,15 +1,19 @@
 module.exports = {
     extends: [
+        './eslint/index.js',
         'prettier',
         'prettier/@typescript-eslint',
         'plugin:import/typescript',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
+        'plugin:import/errors',
+        'plugin:import/warnings',
+        'plugin:import/typescript',
     ],
     env: {
         browser: true,
     },
-    plugins: ['@typescript-eslint'],
+    plugins: ['@typescript-eslint', 'import'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -24,9 +28,14 @@ module.exports = {
                 directory: './tsconfig.json',
             },
             node: {
-                extensions: ['.mjs', '.js', 'jsx', '.ts', '.tsx', '.json'],
+                extensions: ['.js', 'jsx', '.ts', '.tsx', '.mjs', '.json'],
             },
         },
         'import/extensions': ['.js', 'jsx', '.ts', '.tsx', '.mjs'],
+    },
+    rules: {
+        strict: 'error',
+        'import/no-unresolved': 1,
+        'import/no-extraneous-dependencies': 1,
     },
 };

@@ -2,6 +2,7 @@ import path from 'path';
 import config from './config.json';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const plugins = [
     new ManifestPlugin(),
@@ -51,7 +52,12 @@ const commonWebpackSettings = rootDirectory => {
         },
         plugins,
         resolve: {
-            extensions: ['.js', 'jsx', '.ts', '.tsx', '.json'],
+            extensions: ['.js', 'jsx', '.ts', '.tsx', '.mjs', '.json'],
+            plugins: [
+                new TsconfigPathsPlugin({
+                    /* options: */
+                }),
+            ],
         },
         module: {
             rules: rules,

@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "~atoms/*": ["atoms/*"],
+            "~utils/*": ["utils/*"],
+            "~components/*": ["components/*"],
+            "~enums/*": ["enums/*"],
+            "~types/*": ["types/*"],
+            "~store/*": ["store/*"],
+            "~styles/*": ["styles/*"],
+            "~config/*": ["config/*"]
+        }
+    }
+}

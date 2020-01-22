@@ -1,4 +1,4 @@
-import count from '../../utils/count';
+import count from '~utils/count';
 
 const a = 2;
 const b = 4;
