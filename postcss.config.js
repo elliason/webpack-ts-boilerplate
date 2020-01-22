@@ -4,9 +4,6 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
     plugins: {
         autoprefixer,
-        stylelint: {
-            configBaseDir: './',
-        },
         'postcss-custom-media': {},
         'postcss-calc': {},
         'postcss-preset-env': {
@@ -19,7 +16,5 @@ module.exports = {
         },
         // A PostCSS plugin to console.log() the messages (warnings, etc.) registered by other PostCSS plugins.
         'postcss-reporter': {},
-        // compression
-        cssnano: {},
     },
 };

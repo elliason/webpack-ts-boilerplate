@@ -4,11 +4,13 @@ import ManifestPlugin from 'webpack-manifest-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import StylelintPlugin from 'stylelint-webpack-plugin';
 
 const plugins = [
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
     }),
+    new StylelintPlugin(),
     new ManifestPlugin(),
     new AssetsPlugin({
         useCompilerPath: true,
@@ -55,14 +57,13 @@ const rules = [
             },
             {
                 loader: 'css-loader',
-                options: {
-                    url: false,
-                },
             },
             {
                 loader: 'postcss-loader',
             },
-            'sass-loader',
+            {
+                loader: 'sass-loader',
+            },
         ],
     },
 ];
