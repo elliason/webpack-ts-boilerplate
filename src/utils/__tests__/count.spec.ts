@@ -1,3 +1,4 @@
+/* global describe, it, expect */
 import count from '../count';
 
 describe('count', () => {

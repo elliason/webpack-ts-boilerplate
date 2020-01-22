@@ -3,8 +3,12 @@ import config from './config.json';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const plugins = [
+    new MiniCssExtractPlugin({
+        filename: '[name].[contenthash].css',
+    }),
     new ManifestPlugin(),
     new AssetsPlugin({
         useCompilerPath: true,
@@ -33,11 +37,32 @@ const rules = [
         exclude: /node_modules|vendor/,
         use: [
             {
+                loader: 'babel-loader',
+            },
+            {
                 loader: 'ts-loader',
             },
             {
                 loader: 'eslint-loader',
             },
+        ],
+    },
+    {
+        test: /\.scss$/,
+        use: [
+            {
+                loader: MiniCssExtractPlugin.loader,
+            },
+            {
+                loader: 'css-loader',
+                options: {
+                    url: false,
+                },
+            },
+            {
+                loader: 'postcss-loader',
+            },
+            'sass-loader',
         ],
     },
 ];

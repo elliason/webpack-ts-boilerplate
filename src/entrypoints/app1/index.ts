@@ -1,4 +1,5 @@
 import count from '~utils/count';
+import style from '~styles/style.scss';
 
 const a = 2;
 const b = 4;

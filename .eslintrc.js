@@ -1,6 +1,6 @@
 module.exports = {
     extends: [
-        './eslint/index.js',
+        './codestyle/eslint/index.js',
         'prettier',
         'prettier/@typescript-eslint',
         'plugin:import/typescript',

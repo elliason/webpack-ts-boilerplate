@@ -13,3 +13,6 @@ dist
 
 # Testing artifacts - coverage and so
 coverage
+
+# stylelint cache
+.stylelintcache
