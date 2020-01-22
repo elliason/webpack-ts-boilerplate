@@ -14,7 +14,8 @@
         "test": "jest --coverage",
         "test:watch": "jest --watch",
         "lint:js": "eslint --ext .js,.ts,.tsx,.jsx src",
-        "lint:style": "stylelint src/**/*.scss"
+        "lint:style": "stylelint src/**/*.scss",
+        "format": "prettier --write src/**/*.{js,ts,jsx,tsx}"
     },
     "dependencies": {
         "@babel/runtime": "^7.8.3",
