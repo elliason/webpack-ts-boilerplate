@@ -6,6 +6,7 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import HtmlWebPackPlugin from 'html-webpack-plugin';
 
 const plugins = rootDirectory => [
     new MiniCssExtractPlugin({
@@ -26,6 +27,10 @@ const plugins = rootDirectory => [
             to: path.resolve(rootDirectory, config.outputPath),
         },
     ]),
+    new HtmlWebPackPlugin({
+        template: path.resolve(rootDirectory, './src/html/index.html'),
+        filename: './index.html',
+    }),
 ];
 
 const rules = [
@@ -70,6 +75,14 @@ const rules = [
             },
             {
                 loader: 'sass-loader',
+            },
+        ],
+    },
+    {
+        test: /\.html$/,
+        use: [
+            {
+                loader: 'html-loader',
             },
         ],
     },
