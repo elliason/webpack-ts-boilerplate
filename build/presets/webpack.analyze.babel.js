@@ -1,6 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
 
-module.exports = () => ({
+const webpackAnalyzeSettings = {
     plugins: [new BundleAnalyzerPlugin()],
-})
+};
+
+export default webpackAnalyzeSettings;

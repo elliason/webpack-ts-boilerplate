@@ -12,8 +12,10 @@ const modeConfig = env =>
     require(`./build/modes/webpack.${env.mode}.babel.js`)(env);
 
 const webpackConfiguration = (
-    { mode, presets } = { mode: process.env.ENVIRONMENT, presets: [] },
+    { mode, presets } = { mode: 'development', presets: [] },
 ) => {
+    console.log('mode', mode, presets);
+
     return webpackMerge(
         commonSettings(__dirname),
         modeConfig({ mode, presets }),
