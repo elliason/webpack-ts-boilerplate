@@ -1,5 +1,6 @@
 import CssnanoPlugin from 'cssnano-webpack-plugin';
-const TerserPlugin = require('terser-webpack-plugin');
+import TerserPlugin from 'terser-webpack-plugin';
+import ImageminPlugin from 'imagemin-webpack-plugin';
 
 module.exports = () => ({
     mode: 'production',
@@ -18,4 +19,5 @@ module.exports = () => ({
             }),
         ],
     },
+    plugins: [new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })],
 });

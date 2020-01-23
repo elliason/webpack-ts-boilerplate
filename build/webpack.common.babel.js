@@ -5,8 +5,9 @@ import AssetsPlugin from 'assets-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 
-const plugins = [
+const plugins = rootDirectory => [
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
     }),
@@ -19,6 +20,12 @@ const plugins = [
         prettyPrint: true,
         // processOutput: processOutput(),
     }),
+    new CopyPlugin([
+        {
+            from: path.resolve(rootDirectory, config.staticFilesPath),
+            to: path.resolve(rootDirectory, config.outputPath),
+        },
+    ]),
 ];
 
 const rules = [
@@ -76,7 +83,7 @@ const commonWebpackSettings = rootDirectory => {
             chunkFilename: '[name].[contenthash].bundle.js',
             path: path.resolve(rootDirectory, config.outputPath),
         },
-        plugins,
+        plugins: plugins(rootDirectory),
         resolve: {
             extensions: ['.js', 'jsx', '.ts', '.tsx', '.mjs', '.json'],
             plugins: [
