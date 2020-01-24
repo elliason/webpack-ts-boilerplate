@@ -18,6 +18,8 @@ configuration file to be written using ES6. It requires the file to be named wit
 We use webpack modes ( development | production ) and presets. 
 
 ### Build commands
-The default development building task to run is
-```yarn dev``` 
+```yarn dev```
+Starts development server with hot reloading
+```yarn clean```
+Deletes artifacts folder
 
