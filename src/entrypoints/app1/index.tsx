@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import reactRootElements from '~enums/reactRootElements';
-import App1 from '../../containers/App1';
+import store from '~store/index';
+import CounterContainer from '~components/Counter';
 import { Provider } from 'react-redux';
 import '~styles/style.scss';
 
@@ -12,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (appElement) {
         render(
-            <Provider store={}>
-                <App1 />
+            <Provider store={store}>
+                <CounterContainer />
             </Provider>,
             appElement,
         );

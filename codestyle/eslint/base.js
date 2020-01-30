@@ -7,6 +7,6 @@ module.exports = {
         './rules/variables',
         './rules/es6',
         './rules/imports',
-        // './rules/react',
+        './rules/react',
     ].map(require.resolve),
 };

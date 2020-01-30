@@ -2,6 +2,7 @@ module.exports = {
     extends: [
         './codestyle/eslint/index.js',
         'prettier',
+        'prettier/react',
         'prettier/@typescript-eslint',
         'plugin:import/typescript',
         'plugin:@typescript-eslint/recommended',
@@ -37,5 +38,15 @@ module.exports = {
         strict: 'error',
         'import/no-unresolved': 1,
         'import/no-extraneous-dependencies': 1,
+        /* '@typescript-eslint/interface-name-prefix': {
+            prefixWithI: 'always',
+        }, */
+        '@typescript-eslint/interface-name-prefix': 'always',
+        'import/prefer-default-export': 1,
+        'no-undef': 'off', // https://github.com/typescript-eslint/typescript-eslint/issues/342
+        'no-underscore-dangle': [
+            'error',
+            { allow: ['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] },
+        ],
     },
 };

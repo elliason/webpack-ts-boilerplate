@@ -9,7 +9,6 @@ module.exports = {
                 requireForBlockBody: false,
             },
         ],
-
         // Replace 'camelcase' rule with '@typescript-eslint' version
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/camelcase.md
         camelcase: 'off',

@@ -1,6 +1,6 @@
 {
     "entry": {
-        "app1": "./src/entrypoints/app1/index.ts",
+        "app1": "./src/entrypoints/app1/index.tsx",
         "app2": "./src/entrypoints/app2/index.js"
     },
     "staticFilesPath": "./static",
