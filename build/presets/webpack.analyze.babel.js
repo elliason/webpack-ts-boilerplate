@@ -1,7 +1,7 @@
-import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-const webpackAnalyzeSettings = {
+const analyzePreset = env => ({
     plugins: [new BundleAnalyzerPlugin()],
-};
+});
 
-export default webpackAnalyzeSettings;
+module.exports = analyzePreset;
